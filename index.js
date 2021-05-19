@@ -7,11 +7,12 @@ import cheerio from 'cheerio'
 
 import TelegramBot from 'node-telegram-bot-api'
 
-import { CITIZENS_API_URL, AUTH_INIT_URL, AUTH_TOKEN_URL, TELEGRAM_BOT_TOKEN } from './constants.js'
+// import { CITIZENS_API_URL, AUTH_INIT_URL, AUTH_TOKEN_URL, TELEGRAM_BOT_TOKEN } from './constants.js'
+import { CITIZENS_API_URL, AUTH_INIT_URL, AUTH_TOKEN_URL } from './constants.js'
 
 axiosCookieJarSupport.default(axios)
 
-const tgBot = new TelegramBot(TELEGRAM_BOT_TOKEN)
+const tgBot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN)
 
 async function checkForAppointments(email, password, citizenId, telegramId) {
   const cookieJar = new tough.CookieJar()
