@@ -103,7 +103,8 @@ const run = async () => {
 }
 
 async function sendStartMessage(telegramId, citizenId) {
-  return tgBot.sendMessage(telegramId, `Notifying you of BayIMCO appointments for citizen id ${citizenId}.`)
+//  return tgBot.sendMessage(telegramId, `Notifying you of BayIMCO appointments for citizen id ${citizenId}.`)
+  return true
 }
 
 async function notifyError(telegramId, citizenId, error) {
